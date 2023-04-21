@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="items">
+        <span class="item">H</span>
+        <span class="item">A</span>
+        <span class="item">R</span>
+        <span class="item">S</span>
+        <span class="item">H</span>
+        <span class="item">I</span>
+        <span class="item">T</span>
+    </div>
+    <div class="text">
+        <h1>IT IS POINTER JS</h1>
+    </div>
+
+</body>
+<script>
+    const items = document.querySelector('.items');
+const itemElems = document.querySelectorAll('.item');
+document.addEventListener("mousemove", (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+   
+      for (let i = 0; i < itemElems.length; i++) {
+          const item = itemElems[i];
+           const delay = i * 80; // adjust delay as needed
+           setTimeout(() => {
+              item.style.left = x  + "px";
+              item.style.top = y + "px";
+          }, delay);
+      }
+});
+</script>
+</html>
